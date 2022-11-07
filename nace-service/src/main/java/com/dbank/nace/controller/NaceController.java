@@ -12,7 +12,7 @@ import java.util.List;
 
 @Api(tags="NACE controller api", description="Provides API to persist/retrieve data from NACE DB")
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/nace")
 @Slf4j
 public class NaceController {
 
