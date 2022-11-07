@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "8f62b43d-bcce-435a-920b-a4ee44d70ee2",
+		"name": "NACE data demo for Luxoft/Deutsche's bank",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "466721"
+	},
+	"item": [
+		{
+			"name": "Swagger test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/swagger-resources",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"swagger-resources"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get NACE All data",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"accept-encoding": true,
+					"connection": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/shashasr/Documents/microservices/Springboot-Microservice/nace-service/nace_data.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/nace/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"nace",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get NACE Single data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/55555554",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"55555554"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post NACE data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orderId\": 44444444,\r\n    \"level\": 3,\r\n    \"code\": \"89.1\",\r\n    \"parent\": \"80\",\r\n    \"description\": \"Manufacture of electronic components and boards\",\r\n    \"item_includes\": \"Included transistors and resistors\",\r\n    \"itemAlsoIncludes\": \"\",\r\n    \"rulings\": \"\",\r\n    \"item_excludes\": \"Wires and batteries\",\r\n    \"referencesToIsic\": \"261\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get NACE All customer data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/nace/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"nace",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
