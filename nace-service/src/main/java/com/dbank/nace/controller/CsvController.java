@@ -20,7 +20,7 @@ import java.util.List;
 @Api(tags="CSV handler",
         description = "Provides API to perform CSV related operations")
 @Controller
-//@RequestMapping("/api/csv")
+@RequestMapping("/csv")
 @Slf4j
 public class CsvController {
 
