@@ -37,12 +37,12 @@ public class RestApiTests {
 
     @Test
     public void testIfDataPresent() throws Exception {
-        this.mockMvc.perform(get("/api/")).andExpect(status().isOk());
+        this.mockMvc.perform(get("/nace/")).andExpect(status().isOk());
     }
 
     @Test
     public void testGetMethod() throws Exception {
-        this.mockMvc.perform(get("/api/398481")).andDo(print()).andExpect(status().isOk());
+        this.mockMvc.perform(get("/nace/398481")).andDo(print()).andExpect(status().isOk());
         // .andExpect(content().string(containsString("Hello, World")));
     }
 
@@ -54,7 +54,7 @@ public class RestApiTests {
                 "\"itemAlsoIncludes\": \"\",\"rulings\": \"\"," +
                 "\"item_excludes\": \"Wires and batteries\"," +
                 "\"referencesToIsic\": \"261\" }";
-        this.mockMvc.perform(post("/api/")
+        this.mockMvc.perform(post("/nace/")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(jsonPayload))
                 .andExpect(status().isOk());
@@ -62,6 +62,6 @@ public class RestApiTests {
 
     @Test
     public void testErrorOnNotPresent() throws Exception {
-        this.mockMvc.perform(get("/api/0000000")).andDo(print()).andExpect(status().is4xxClientError());
+        this.mockMvc.perform(get("/nace/0000000")).andDo(print()).andExpect(status().is4xxClientError());
     }
 }
